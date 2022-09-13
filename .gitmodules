@@ -1,0 +1,3 @@
+[submodule "roles/ahosie.mergevars"]
+	path = roles/ahosie.mergevars
+	url = git@github.com:ahosie/ansible-role-mergevars.git
