@@ -20,7 +20,6 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'ahosie.mergevars'
           submodules: recursive
 
       - name: Set up Python 3.
@@ -29,17 +28,29 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies
-        run: |
-          pip3 install yamllint
-          sudo apt install pipenv
+        run: pip3 install yamllint
 
       - name: Lint code.
-        run: |
-          yamllint .
+        run: yamllint .
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies
+        run: sudo apt install pipenv
 
       - name: Sync virtual environment
-        run: |
-          pipenv sync
+        run: pipenv sync
 
       - name: Run simple demo plays
         run: |
