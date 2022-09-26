@@ -43,12 +43,14 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies
-        run: sudo apt install pipenv
+        run: sudo apt install pipenv direnv
 
       - name: Sync virtual environment
-        run: pipenv sync
+        run: direnv allow
 
       - name: Run simple demo plays
         run: |
           ansible-playbook simpledemo_dict.yml
           ansible-playbook simpledemo_list.yml
+        env:
+          ANSIBLE_INVENTORY: hosts.yml
