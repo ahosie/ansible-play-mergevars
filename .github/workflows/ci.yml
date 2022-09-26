@@ -8,10 +8,6 @@ name: CI
 #  schedule:
 #    - cron: "30 2 * * 0"
 
-defaults:
-  run:
-    working-directory: 'ahosie.mergevars'
-
 jobs:
   lint:
     name: Lint
