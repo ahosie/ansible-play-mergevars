@@ -1,0 +1,9 @@
+---
+bar_the_first:
+  - name: 'Foo McFoo Face'
+    description: 'Demonstrate the thing'
+    purpose: 'Demo'
+bar_the_second:
+  - name: 'List item #2'
+    description: 'Completes the demonstration'
+    purpose: 'Demo'

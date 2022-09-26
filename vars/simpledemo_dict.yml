@@ -1,0 +1,6 @@
+---
+bar_the_first:
+  name: 'Foo McFoo Face'
+  purpose: 'Demo'
+bar_the_second:
+  description: 'Demonstrate the thing'

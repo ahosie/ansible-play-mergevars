@@ -1,0 +1,15 @@
+---
+- hosts: all
+  connection: local
+  vars_files:
+    - vars/simpledemo_list.yml
+  vars:
+    mergevars_lists:
+      - variable: foo
+        pattern: 'bar_.+'
+  roles:
+    - ahosie.mergevars
+  tasks:
+    - name: "Display the merged variable foo containing all bar_'s"
+      debug:
+        msg: "{{ foo }}"
